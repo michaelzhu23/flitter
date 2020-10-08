@@ -22,8 +22,12 @@ img {
 
 .user-post {
   display: flex;
-  width: 40%;
+  width: 600px;
   margin: auto;
+}
+
+.post-content {
+  width: 100%;
 }
 
 .post-icons {
