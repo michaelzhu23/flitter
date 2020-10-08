@@ -30,6 +30,10 @@ img {
   width: 100%;
 }
 
-.post-icons {
-  width: 80%;
+.edit-icon:hover {
+  cursor: pointer;
+}
+
+.delete-icon:hover {
+  cursor: pointer;
 }
