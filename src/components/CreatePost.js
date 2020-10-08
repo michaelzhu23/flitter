@@ -17,7 +17,7 @@ class CreatePost extends Component {
             value={content}
             onChange={(e) => this.setState({ content: e.target.value })}
             type="text"
-            placeholder="What's gooooood?"
+            placeholder="What's going on?"
           />
         </div>
         <Mutation
