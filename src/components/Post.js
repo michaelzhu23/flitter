@@ -1,12 +1,25 @@
 import React, { Component } from "react";
+import { Mutation } from "react-apollo";
+import { FEED_QUERY, DELETE_POST_MUTATION } from "../Queries";
 
 class Post extends Component {
   render() {
     const canEdit =
       this.props.post.postedByUser.userId === "1" ? (
         <div className="post-icons">
-          <i class="fas fa-edit mx-2 text-primary edit-icon"></i>
-          <i class="fas fa-trash-alt mx-2 text-danger delete-icon"></i>
+          <i className="fas fa-edit mx-2 text-primary edit-icon"></i>
+          <Mutation
+            mutation={DELETE_POST_MUTATION}
+            variables={{ postId: this.props.post.postId }}
+            refetchQueries={[{ query: FEED_QUERY }]}
+          >
+            {(deletePostMutation) => (
+              <i
+                className="fas fa-trash-alt mx-2 text-danger delete-icon"
+                onClick={deletePostMutation}
+              ></i>
+            )}
+          </Mutation>
         </div>
       ) : null;
 
@@ -18,7 +31,7 @@ class Post extends Component {
             alt="User of post"
           />
         </div>
-        <div className="post-content">
+        <div className="post-main">
           <div className="post-heading d-flex justify-content-between">
             <div className="post-user">
               <b>{this.props.post.postedByUser.userName}</b> @
@@ -26,7 +39,7 @@ class Post extends Component {
             </div>
             {canEdit}
           </div>
-          <div>{this.props.post.content}</div>
+          <div className="post-content mt-1">{this.props.post.content}</div>
           <div className="post-icons mt-3 d-flex justify-content-between">
             <i className="far fa-comment"></i>
             <i className="fas fa-redo"></i>
