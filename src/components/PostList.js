@@ -1,21 +1,7 @@
 import React, { Component } from "react";
 import Post from "./Post";
 import { Query } from "react-apollo";
-import gql from "graphql-tag";
-
-const FEED_QUERY = gql`
-  {
-    feed {
-      postId
-      content
-      postedByUser {
-        userAlias
-        userName
-        profilePictureUrl
-      }
-    }
-  }
-`;
+import { FEED_QUERY } from "../Queries";
 
 class PostList extends Component {
   render() {

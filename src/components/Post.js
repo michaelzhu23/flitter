@@ -17,10 +17,10 @@ class Post extends Component {
           </div>
           <div>{this.props.post.content}</div>
           <div className="post-icons mt-3 d-flex justify-content-between">
-            <i class="far fa-comment"></i>
-            <i class="fas fa-redo"></i>
-            <i class="far fa-heart"></i>
-            <i class="far fa-paper-plane"></i>
+            <i className="far fa-comment"></i>
+            <i className="fas fa-redo"></i>
+            <i className="far fa-heart"></i>
+            <i className="far fa-paper-plane"></i>
           </div>
         </div>
       </div>
