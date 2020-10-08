@@ -32,3 +32,12 @@ export const DELETE_POST_MUTATION = gql`
     }
   }
 `;
+
+export const UPDATE_POST_MUTATION = gql`
+  mutation UpdatePostMutation($postId: ID!, $content: String!) {
+    updatePost(postId: $postId, content: $content) {
+      postId
+      content
+    }
+  }
+`;
