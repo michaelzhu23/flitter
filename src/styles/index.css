@@ -74,3 +74,8 @@ input:focus {
   height: 10px;
   background-color: #e6ecf0;
 }
+
+.page-heading {
+  width: 600px;
+  margin: auto;
+}
