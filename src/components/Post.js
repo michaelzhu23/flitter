@@ -21,7 +21,7 @@ class Post extends Component {
 
     const canEdit =
       this.props.post.postedByUser.userId === "1" ? (
-        <div className="post-icons">
+        <div className="post-icons w-25 text-right">
           <i
             className="fas fa-edit mx-2 text-primary edit-icon"
             onClick={this.togglePostEditing}
@@ -65,7 +65,7 @@ class Post extends Component {
                   this.togglePostEditing();
                 }}
               >
-                Submit
+                Update
               </button>
             )}
           </Mutation>
@@ -93,7 +93,7 @@ class Post extends Component {
         <div className="post-main">
           <div className="post-heading d-flex justify-content-between">
             <div className="post-user">
-              <b>{this.props.post.postedByUser.userName}</b> @
+              <b>{this.props.post.postedByUser.userName}</b> <i class="fas fa-check-circle text-info"></i> @
               {this.props.post.postedByUser.userAlias}
             </div>
             {canEdit}
