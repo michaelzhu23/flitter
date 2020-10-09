@@ -20,6 +20,13 @@ img {
   object-fit: cover;
 }
 
+.header-picture img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .user-post {
   display: flex;
   width: 600px;
@@ -36,4 +43,34 @@ img {
 
 .delete-icon:hover {
   cursor: pointer;
+}
+
+.heading {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.create-post {
+  width: 600px;
+  margin: auto;
+  display: flex;
+}
+
+.header-icons {
+  width: 340px;
+}
+
+.post-icons {
+  width: 80%;
+}
+
+input:focus {
+  outline: none;
+}
+
+.divider {
+  width: 600px;
+  margin: 0 auto;
+  height: 10px;
+  background-color: #e6ecf0;
 }
