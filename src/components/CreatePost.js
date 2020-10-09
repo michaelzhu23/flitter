@@ -10,23 +10,33 @@ class CreatePost extends Component {
   render() {
     const { content } = this.state;
     return (
-      <div>
-        <div className="flex flex-column mt3">
+      <div className="create-post p-3 border">
+        <div className="profile-picture mr-2">
+          <img
+            src="./images/michael-zhu.jpg"
+            alt="User of post"
+          />
+        </div>
+        <div>
           <input
-            className="mb2"
+            className="my-2 border-0"
             value={content}
             onChange={(e) => this.setState({ content: e.target.value })}
             type="text"
             placeholder="What's going on?"
+            size="60"
           />
-        </div>
-        <Mutation
+          <hr className="my-2"/>
+          <div className="text-right">
+            <Mutation
           mutation={CREATE_POST_MUTATION}
           variables={{ content }}
           refetchQueries={[{ query: FEED_QUERY }]}
         >
           {(createPostMutation) => (
             <button
+              type="button"
+              className="btn btn-info"
               onClick={() => {
                 createPostMutation();
                 this.setState({ content: "" });
@@ -36,6 +46,8 @@ class CreatePost extends Component {
             </button>
           )}
         </Mutation>
+          </div>
+        </div>
       </div>
     );
   }
